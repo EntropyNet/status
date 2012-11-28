@@ -24,8 +24,5 @@ def statuscheck(normservers=None, sslservers=None):
             socketcheck.close()
         except socket.error:
             sslservers[keys] = 'DOWN'
-    
+
     return render_template('status.html', normservers=normservers, sslservers=sslservers)
-if __name__ == '__main__':
-    status.debug = True
-    status.run(host='0.0.0.0')
