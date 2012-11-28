@@ -10,7 +10,7 @@
   </ul>
   <div id=main>
     {% for key, value in normservers.iteritems() %}
-      <p>{{ key|e }} : {{value}}</p>
+    <p>{{ key|e }} : <strong>{{value}}</strong></p>
       {% endfor %}
     </div>
 </body>
