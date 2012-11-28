@@ -11,6 +11,7 @@ def statuscheck(normservers=None, sslservers=None):
     for keys in normservers:
         try:
             socketcheck = socket.create_connection((keys, normalport))
+            socketcheck.close()
         except socket.error:
             normservers[keys] = 'DOWN'
 
@@ -20,6 +21,7 @@ def statuscheck(normservers=None, sslservers=None):
     for keys in sslservers:
         try:
             socketcheck = socket.create_connection((keys, sslport))
+            socketcheck.close()
         except socket.error:
             sslservers[keys] = 'DOWN'
     
