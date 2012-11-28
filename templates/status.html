@@ -1,0 +1,16 @@
+<!doctype html>
+<link rel="stylesheet" href="static/style.css">
+<head>
+  <title>EntropyNet Network Status</title>
+</head>
+
+<body>
+  <ul id=header>
+    <h1>EntropyNet Network Status</h1>
+  </ul>
+  <div id=main>
+    {% for key, value in normservers.iteritems() %}
+      <p>{{ key|e }} : {{value}}</p>
+      {% endfor %}
+    </div>
+</body>
