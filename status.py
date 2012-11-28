@@ -14,14 +14,14 @@ def statuscheck(normservers=None, sslservers=None):
         except socket.error:
             normservers[keys] = 'DOWN'
 
-    sslservers = {'amy.entropynet.net': 0, 'bender.entropynet.net': 0, 'kif.entropynet.net': 0, 'leela.entropynet.net': 0, 'scruffy.entropynet.net': 0}
+    sslservers = {'amy.entropynet.net': 'OK', 'bender.entropynet.net': 'OK', 'kif.entropynet.net': 'OK', 'leela.entropynet.net': 'OK', 'scruffy.entropynet.net': 'OK'}
     sslport = '6697'
 
     for keys in sslservers:
         try:
             socketcheck = socket.create_connection((keys, sslport))
         except socket.error:
-            sslservers[keys] = 1
+            sslservers[keys] = 'DOWN'
     
     return render_template('status.html', normservers=normservers, sslservers=sslservers)
 if __name__ == '__main__':
