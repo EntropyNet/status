@@ -22,8 +22,6 @@ body{
 	max-width: 42em;
 	/* center */
 	margin: auto;
-	/* make text legible */
-	text-rendering: optimizeLegibility;
 	/* apparently good default fonts */
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
